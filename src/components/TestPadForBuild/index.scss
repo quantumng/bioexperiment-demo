@@ -1,0 +1,78 @@
+.selector-zone {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    div {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: attr(data-name);
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+        }
+    }
+
+    .test-pad {
+        height: 20px;
+        width: fit-content;
+        margin: 8px 20px;
+    }
+}
+.drop-zone {
+    width: 100%;
+    position: relative;
+    height: 20px;
+    background-image: url('../../assets//covid_19_test_pvc_background.png');
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    div {
+        position: absolute;
+        height: calc(100% - 2px);
+        bottom: 2px;
+
+        img {
+            width: 100%;
+            height: fit-content;
+        }
+        &:nth-of-type(1) {
+            left: 0;
+            width: 23%;
+            z-index: 3;
+        }
+        &:nth-of-type(2) {
+            left: 20%;
+            width: 13.5%;
+            z-index: 2;
+        }
+        &:nth-of-type(3) {
+            left: 29%;
+            width: 53%;
+            z-index: 1;
+        }
+        &:nth-of-type(4) {
+            left: 80%;
+            width: 20%;
+            z-index: 2;
+        }
+    }
+}
+
+.preview-item {
+    
+    img {
+        height: 20px;
+    }
+}
+
+.build-wrapper {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
