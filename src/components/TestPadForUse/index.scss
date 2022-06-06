@@ -1,0 +1,118 @@
+.testpad-for-use {
+    position: relative;
+    height: 100%;
+
+
+    .bottle {
+        width: 30px;
+        position: absolute;
+        bottom: 300px;
+        right: 10px;
+
+        &-1 {
+            right: 60px;
+
+            // .bottle-box {
+            //     background-color: bisque;
+            // }
+        }
+
+        &-head {
+            position: absolute;
+            width: 20px;
+            text-align: center;
+            top: -23px;
+            left: 50%;
+            transform: translateX(-50%);
+            user-select: none;
+        }
+
+        &-take {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: gray;
+            user-select: none;
+        }
+
+        &-drop {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 30px solid #ccc;
+            user-select: none;
+          }
+
+        &-body {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &-gate {
+            display: inline-block;
+            width: 20px;
+            height: 8px;
+            margin-bottom: 0;
+            background-color: brown;
+        }
+
+        &-box {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-top: 0;
+            background-color: brown;
+        }
+    }
+
+    .testpad-wrapper {
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        height: 60px;
+        background-image: url('../../assets/covid-19-test.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+
+
+        .drop-position {
+            width: 30px;
+            height: 60px;
+            border: 1px dashed #ccc;
+            position: absolute;
+            top: -50px;
+            left: 20px;
+
+            &-2 {
+                left: 80px;
+            }
+        }
+
+        .drip {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: lightblue;
+            border-radius: 20px;
+          }
+        
+          .drip:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid lightblue;
+            top: -6px;
+            left: 0;
+        }
+    }
+}

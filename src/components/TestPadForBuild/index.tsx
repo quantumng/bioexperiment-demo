@@ -169,7 +169,7 @@ const TestPadForBuild: FC<Props> = ({ getPadReady }) => {
 
     return (
       <div className="build-wrapper">
-        <p style={{textAlign: 'center'}}>请先完成检测卡的组装,注意依次摆放！</p>
+        <p style={{textAlign: 'center'}}>拖动组件，完成检测卡的安装,注意摆放顺序！</p>
         <DndProvider backend={TouchBackend}>
   
           <div className="selector-zone">

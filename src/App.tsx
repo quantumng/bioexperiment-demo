@@ -8,11 +8,11 @@ import './App.scss';
 
 
 function App() {
-  const [isPadReady, setIsPadReady] = useState(false);
+  const [isPadReady, setIsPadReady] = useState(true);
 
   return (
     <>
-      <header className="App-header">Hello, welcome to Bio World!</header>
+      <header className="App-header">Hello, welcome to the Bio World!</header>
 
       { isPadReady ? <TestPadForUse /> : <TestPadForBuild getPadReady={setIsPadReady} /> }
     </>
