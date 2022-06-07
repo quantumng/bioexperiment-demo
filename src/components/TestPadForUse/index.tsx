@@ -62,7 +62,7 @@ const SampleBottle: FC<any> = (props) => {
 }
 
 const TestPad: FC<any> = ({ dropFlag }) => {
-    const [step, setStep] = useState(0);
+    const [step, setStep] = useState(3);
     const [limite, setLimite] = useState(50);
     const dripAnimation = useAnimation();
     const sampleAnimation = useAnimation();
@@ -95,7 +95,24 @@ const TestPad: FC<any> = ({ dropFlag }) => {
             { step === 2 ? <div className={cn('antibody', {
                 'with-b1': true,
                 'without-b1': false,
-            })}></div> : null }
+            })}>
+                <div className="antibody-head"></div>
+                <div className="antibody-body">
+                    <span className="antibody-body-part"></span>
+                    <span className="antibody-body-part"></span>
+                    <span className="antibody-body-part"></span>
+                </div>
+            </div> : null }
+            { step === 3 ? <div className={cn('secantibody', {
+                'with-b1': true,
+                'without-b1': false,
+            })}>
+                <div className="antibody-body">
+                    <span className="antibody-body-part"></span>
+                    <span className="antibody-body-part"></span>
+                    <span className="antibody-body-part"></span>
+                </div>
+            </div> : null }
             
         </motion.div>
         <div className="drop-without-b1"></div>
