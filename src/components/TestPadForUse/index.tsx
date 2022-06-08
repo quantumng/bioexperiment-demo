@@ -103,14 +103,22 @@ const TestPad: FC<any> = ({ dropFlag }) => {
                     <span className="antibody-body-part"></span>
                 </div>
             </div> : null }
-            { step === 3 ? <div className={cn('secantibody', {
+            { step === 3 ? <div className={cn('primary-antibody', {
                 'with-b1': true,
                 'without-b1': false,
             })}>
-                <div className="antibody-body">
-                    <span className="antibody-body-part"></span>
-                    <span className="antibody-body-part"></span>
-                    <span className="antibody-body-part"></span>
+                <div className="primary-antibody-head"></div>
+                <div className="primary-antibody-body">
+                </div>
+            </div> : null }
+            { step === 4 ? <div className={cn('secondary-antibody', {
+                'with-b1': true,
+                'without-b1': false,
+            })}>
+                <div className="secondary-antibody-body">
+                    <span className="secondary-antibody-body-part"></span>
+                    <span className="secondary-antibody-body-part"></span>
+                    <span className="secondary-antibody-body-part"></span>
                 </div>
             </div> : null }
             
