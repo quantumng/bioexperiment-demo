@@ -1,0 +1,12 @@
+.antigen {
+    width: 12px;
+    height: 12px;
+    background-color: wheat;
+    border: 1px solid burlywood;
+    transform: rotate(45deg);
+
+    &.without-b1 {
+        background-color: lightblue;
+        border: 1px solid lavender;
+    }
+}
