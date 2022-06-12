@@ -15,7 +15,12 @@ import './index.scss';
 
 const SampleBottle: FC<any> = (props) => {
     const bottleRef = useRef(null);
+    const position = useRef({ x: 0, y: 0 });
     // const dragControls = useDragControls();
+
+    const handleOnDrag = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+        position.current = { x: info.point.x, y: info.point.y };
+    }
 
     const handleDragEnd = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo, hasB1: boolean) => {
         if (info.point.x > 35 && info.point.x < 65 && info.point.y > 600 && info.point.y < 650) {
@@ -27,6 +32,7 @@ const SampleBottle: FC<any> = (props) => {
     };
 
     return <>
+        <div>x: {position.current.x} {' '} y:{position.current.y}</div>
         <div className='bottle bottle-1'>
             <motion.div
                 drag
@@ -34,6 +40,7 @@ const SampleBottle: FC<any> = (props) => {
                     scale: 1.2
                 }}
                 dragSnapToOrigin
+                onDrag={handleOnDrag}
                 onDragEnd={(e, i) => { handleDragEnd(e, i, true) }}
             >
                 <div className="bottle-head" ref={bottleRef}>
@@ -54,6 +61,7 @@ const SampleBottle: FC<any> = (props) => {
                     scale: 1.2
                 }}
                 dragSnapToOrigin
+                onDrag={handleOnDrag}
                 onDragEnd={(e, i) => { handleDragEnd(e, i, false) }}
             >
                 <div className="bottle-head" ref={bottleRef}>
