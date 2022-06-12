@@ -137,6 +137,7 @@ const TestPad: FC<any> = ({ dropFlag, isWithB1, useStep } ) => {
     const sampleAnimation = useAnimation();
     const antibodyAnimation = useAnimation();
 
+    // @ts-ignore
     const handleDragEnd = (e, i) => {
         if (step >= Step.Five) {
             antibodyAnimation.start({
